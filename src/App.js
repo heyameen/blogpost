@@ -10,11 +10,15 @@ import Posts from "./Posts";
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoader] = useState(false);
+
 
   async function requestPosts() {
+    setLoader(true);
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
     const json = await res.json();
     setPosts(json);
+    setLoader(false);
   }
 
   useEffect(() => {
@@ -25,6 +29,7 @@ function App() {
     <Router>
       <div className="app">
         <h2 className="app-headers">Blog Posts</h2>
+        {loading ? <h3>Loading...</h3> : null}
         <Routes>
           <Route path="/" element={<Posts postData={posts} />} />
           <Route path="/posts/:id/comments" element={<Comments />} />
