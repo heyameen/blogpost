@@ -1,38 +1,69 @@
-.App {
+.app{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-headers{
+  font-size: 44px;
+  font-weight: bold;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.posts {
+  border-radius: 6px;
+  background: #f8f8f8;
+  box-shadow: 0px 30px 60px rgba(25, 22, 36, 0.2);
+  width: 60vw;
+  padding: 15px;
+  margin-bottom: 25px; 
+  color: #000;
+  border: none;
+  padding: 28px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.comments{
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.comments:hover{
+  cursor: pointer;
+}
+
+.comment {
+  border-bottom: 1px solid #d7dce0;
+}
+
+.comment:last-child{
+  border-bottom: none;
+}
+
+.comment-name{
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.comment-email{
+  color: #777;
+  font-size: 12px;
+  margin-top: 0;
+}
+
+.router-btn{
+  width: 120px;
+  font-family: 'Inter';
+  border-radius: 4px;
+  background: #5e4bce;
+  border: none;
   color: white;
+  padding: 8px 28px;
+  font-size: 16px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.router-btn:hover{
+  cursor: pointer;
 }
